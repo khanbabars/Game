@@ -1,8 +1,11 @@
-package org.datasource;
+/*package org.datasource;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
 
+ 
+ * Not used
+ 
 
 public class JdbcDataSource {
 	
@@ -12,6 +15,7 @@ public class JdbcDataSource {
 	        try{  
 	     	Class.forName("oracle.jdbc.driver.OracleDriver");  
 	    Connection con=DriverManager.getConnection( "jdbc:oracle:thin:@10.0.1.28:1521:xe","gameserver","gameserver");  
+	    con.close();
 	          return con;
  // con.close(); 
 	        }catch(Exception e)
@@ -28,3 +32,4 @@ return null;
 	        
 
 
+*/

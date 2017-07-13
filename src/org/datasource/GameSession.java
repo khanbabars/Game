@@ -1,34 +1,31 @@
 package org.datasource;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import java.sql.SQLException;
 
-
-
-
 public class GameSession {
-	
-	
 
 	public static void main(String args[]) throws SQLException {
-	//getGameSession(win, bet, balance);
-
+		
 	}
-	
-	
+
 	public static void getGameSession(int win, int bet, int balance) throws SQLException {
 
-PreparedStatement insertSql =JdbcDataSource.getDbConnections().prepareStatement("insert into game_session(win, bet, balance) values(?,?,?)");
-insertSql.setInt(1, win);
-insertSql.setInt(2, bet);
-insertSql.setInt(3, balance);
-insertSql.executeUpdate();
+		// get connection from JdbcConnectionPool
+		Connection conn = JdbcConnectionPool.poolFactoryPrimary().getConnection();
 
-JdbcDataSource.getDbConnections().close();
+		PreparedStatement insertSql = conn
+				.prepareStatement("insert into game_session(win, bet, balance) values(?,?,?)");
+		insertSql.setInt(1, win);
+		insertSql.setInt(2, bet);
+		insertSql.setInt(3, balance);
+		insertSql.executeUpdate();
 
-//System.out.println("New row inserted ");
+		conn.close();
 
+		// System.out.println("New row inserted ");
 
-}
 	}
+}
