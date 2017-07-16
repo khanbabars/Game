@@ -14,8 +14,11 @@ public class GameSession {
 	}
 
 	public static void getGameSession(int win, int bet, int balance) throws SQLException {
-	
-		BaseThread threadObj = new BaseThread(win, bet, balance);
+		// attach an object to this method and pass with synchronized
+		Object lockOnGameSession = new Object();
+		synchronized(lockOnGameSession){
+		
+			BaseThread threadObj = new BaseThread(win, bet, balance);
 		Thread startThread = new Thread(threadObj);
 		startThread.start();
 		System.out.println("Thread started"+startThread.getName());
@@ -35,7 +38,7 @@ public class GameSession {
 		insertSql.setInt(3, balance);
 		insertSql.executeUpdate();
 		System.out.println("Record'Updated for " +startThread.getName());
-		 conn.close();
+		 //conn.close();
 		
 
 		/*
@@ -43,7 +46,7 @@ public class GameSession {
 		  conn.close();
 		 System.out.println("New row inserted ");2
 		 */
-	
+		 }
 
 	}
 
