@@ -1,3 +1,4 @@
+<%@page import="java.io.Console"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -30,16 +31,20 @@ Game Area	<br>
 
 
 
-bet: <input type="text" name=bet value = 0 ><br>
-win: <input type="text" name=win  value = 0><br>
+bet: <input type="text" name=bet value =0 ><br>
+win: <input type="text" name=win  value =0 ><br>
 balance: <input type="text" name=balance  value =0 > <br>
 <% 
+
 String bet = (request.getParameter("bet")==null)? "0" : request.getParameter("bet");
 String win = (request.getParameter("win")==null)? "0" : request.getParameter("win");
-String balance = (request.getParameter("bet")==null)? "0" : request.getParameter("balance");
+String balance = (request.getParameter("balance")==null)? "0" : request.getParameter("balance");
+
 %>
 
- <% GameSession.getGameSession( Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));%> 
+
+ <%
+ GameSession.getGameSession(Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));%> 
 <input type="submit" value="Play">
 
 
