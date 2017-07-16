@@ -10,6 +10,7 @@ public class Logging {
 	   public static void main(String[] args)  throws IOException {
 		   
 		   //BasicConfigurator.configure();
+		   
 	     
 	      logger.info("Starting Application Server");
 	      System.out.println("logs are printing");
