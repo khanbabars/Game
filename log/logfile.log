@@ -6,3 +6,62 @@ Starting Application Server
 2017-07-13 18:16:02 INFO  Logging:18 - Starting Application Server
 2017-07-13 18:16:07 INFO  Logging:18 - Starting Application Server
 2017-07-13 19:37:19 INFO  Logging:18 - Starting Application Server
+2017-07-19 12:56:21 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 12:56:21 INFO  ConnectionStatistics:30 - 
+Available connections: 0
+2017-07-19 12:56:21 INFO  ConnectionStatistics:32 - 
+Borrowed connections: 0
+2017-07-19 12:56:21 INFO  ConnectionStatistics:35 - 
+Connected as: GameServer_DB
+2017-07-19 13:01:08 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 13:01:12 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 13:01:12 INFO  ConnectionStatistics:30 - 
+Available connections: 0
+2017-07-19 13:01:12 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 13:01:12 INFO  ConnectionStatistics:32 - 
+Borrowed connections: 0
+2017-07-19 13:01:12 INFO  ConnectionStatistics:35 - 
+Connected as: GameServer_DB
+2017-07-19 13:16:18 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 13:16:22 INFO  JdbcConnectionPool:85 - 
+Available connections: 19
+2017-07-19 13:16:22 INFO  JdbcConnectionPool:87 - 
+Borrowed connections: 1
+2017-07-19 13:16:22 INFO  JdbcConnectionPool:90 - 
+Connected as: GSDB
+2017-07-19 13:16:22 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 13:16:24 INFO  JdbcConnectionPool:85 - 
+Available connections: 19
+2017-07-19 13:16:24 INFO  JdbcConnectionPool:87 - 
+Borrowed connections: 1
+2017-07-19 13:16:24 INFO  JdbcConnectionPool:90 - 
+Connected as: GSDB
+2017-07-19 13:16:24 INFO  ConnectionStatistics:29 - 
+Available connections: 19
+2017-07-19 13:16:24 INFO  JdbcConnectionPool:48 - Enabling Session factory
+2017-07-19 13:16:26 INFO  JdbcConnectionPool:85 - 
+Available connections: 19
+2017-07-19 13:16:26 INFO  JdbcConnectionPool:87 - 
+Borrowed connections: 1
+2017-07-19 13:16:26 INFO  JdbcConnectionPool:90 - 
+Connected as: GSDB
+2017-07-19 13:16:26 INFO  ConnectionStatistics:31 - 
+Borrowed connections: 1
+2017-07-19 13:16:26 INFO  ConnectionStatistics:34 - 
+Connected as: GameServer_DB
+2017-07-19 14:55:26 INFO  JdbcConnectionPool:57 - Enabling Session factory
+2017-07-19 14:55:26 INFO  ConnectionStatistics:24 - 
+Available connections: 0
+2017-07-19 14:55:26 INFO  JdbcConnectionPool:57 - Enabling Session factory
+2017-07-19 14:55:26 INFO  ConnectionStatistics:26 - 
+Borrowed connections: 0
+2017-07-19 14:55:26 INFO  ConnectionStatistics:29 - 
+Connected as: GameServer_DB
+2017-07-19 14:55:58 INFO  JdbcConnectionPool:57 - Enabling Session factory
+2017-07-19 14:55:58 INFO  ConnectionStatistics:24 - 
+Available connections: 0
+2017-07-19 14:55:58 INFO  JdbcConnectionPool:57 - Enabling Session factory
+2017-07-19 14:55:58 INFO  ConnectionStatistics:26 - 
+Borrowed connections: 0
+2017-07-19 14:55:58 INFO  ConnectionStatistics:29 - 
+Connected as: GameServer_DB

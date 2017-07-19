@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import org.threads.BaseThread;
-
 import oracle.ucp.UniversalConnectionPoolException;
+
+
 
 public class GameSession {
 
@@ -13,7 +14,10 @@ public class GameSession {
 		
 	}
 
-	public static void getGameSession(int win, int bet, int balance) throws SQLException {
+	
+	public static void getGameSession(int win, int bet, int balance) throws SQLException, UniversalConnectionPoolException{
+		
+		
 		// attach an object to this method and pass with synchronized
 		Object lockOnGameSession = new Object();
 		synchronized(lockOnGameSession){
@@ -22,15 +26,10 @@ public class GameSession {
 		Thread startThread = new Thread(threadObj);
 		startThread.start();
 		System.out.println("Thread started"+startThread.getName());
-
-		// get connection from JdbcConnectionPool
-		Connection conn = null;
-		try {
-			conn = JdbcConnectionPool.poolFactoryPrimary().getConnection();
-		} catch (UniversalConnectionPoolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		
+		Connection conn = GetConnFromPool.returnConnectionFromPool();
+		
 		PreparedStatement insertSql = conn
 				.prepareStatement("insert into game_session(win, bet, balance) values(?,?,?)");
 		insertSql.setInt(1, win);
@@ -38,16 +37,18 @@ public class GameSession {
 		insertSql.setInt(3, balance);
 		insertSql.executeUpdate();
 		System.out.println("Record'Updated for " +startThread.getName());
-		 //conn.close();
+		 conn.close();
+		 // No need to close connection because connection pool removes idle connections
+		 System.out.println(conn);
+		 System.out.println("New row inserted ");
+		 System.out.println("Finished "+startThread.getName());
+		
 		
 
-		/*
-		  No need to close connection because connection pool removes idle connections
-		  conn.close();
-		 System.out.println("New row inserted ");2
-		 */
+		}
+		
 		 }
 
 	}
 
-}
+
