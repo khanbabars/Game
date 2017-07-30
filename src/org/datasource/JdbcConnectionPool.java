@@ -38,15 +38,15 @@ public class JdbcConnectionPool {
 			mgr.createConnectionPool((UniversalConnectionPoolAdapter)poolDsFactory);
 			
 			
-			
+			System.out.println("Checking Pool factory parameters");
 			//Pool Properties
 			poolDsFactory.setInitialPoolSize(5);
-			poolDsFactory.setMinPoolSize(20);
+			poolDsFactory.setMinPoolSize(10);
 			poolDsFactory.setMaxPoolSize(100);
 			poolDsFactory.setMaxConnectionReuseCount(100);
 			poolDsFactory.setConnectionWaitTimeout(10);
 			poolDsFactory.setInactiveConnectionTimeout(10);
-			System.out.println("Enabling Session factory");
+			
 			//Caching enable
 			poolDsFactory.setMaxStatements(50);
 			return poolDsFactory;
@@ -84,9 +84,9 @@ public class JdbcConnectionPool {
 	
 	
 	//Pool Properties
-	poolDsFactory.setInitialPoolSize(20);
-	poolDsFactory.setMinPoolSize(20);
-	poolDsFactory.setMaxPoolSize(40);
+	poolDsFactory.setInitialPoolSize(5);
+	poolDsFactory.setMinPoolSize(10);
+	poolDsFactory.setMaxPoolSize(100);
 	poolDsFactory.setMaxConnectionReuseCount(100);
 	poolDsFactory.setConnectionWaitTimeout(10);
 	poolDsFactory.setInactiveConnectionTimeout(10);
