@@ -24,7 +24,7 @@ public class Subscriber {
 	        tc_conn.start();
 	       
 	        
-	        Topic queueTopic = ((AQjmsSession) jms_sess).getTopic("jmsuser","AQ_QUEUE5");
+	        Topic queueTopic = ((AQjmsSession) jms_sess).getTopic("gameserver","TEST_QUEUE");
 	        TopicSubscriber subGreen =  (TopicSubscriber)((AQjmsSession) jms_sess).createDurableSubscriber(queueTopic, "GREEN");
 	       // TopicSubscriber subRed =  (TopicSubscriber)((AQjmsSession) jms_sess).createDurableSubscriber(queueTopic, "RED");        
 	        Message msg = subGreen.receive(10);

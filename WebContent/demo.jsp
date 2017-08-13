@@ -6,6 +6,7 @@
      <%@page import = "java.sql.Connection" %>
      <%@page import = "org.datasource.GameSession" %>
      <%@page import = "org.aq.Publisher" %>
+     <%@page import ="org.aq.AqTopicConn.State" %>
      
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,7 +20,7 @@ Game Area	<br>
 
 
 
-
+<% Publisher publisher = new Publisher(State.Initialize);%>
 
 <% java.util.Date date  = new java.util.Date(); %>
 <div> <%= date %></div>
@@ -47,7 +48,7 @@ String balance = (request.getParameter("balance")==null)? "0" : request.getParam
  <%
 //  GameSession.getGameSession(Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));
  
- Publisher.getGameSessionPublisher(Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));
+ publisher.getGameSessionPublisher(Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));
  %> 
 <input type="submit" value="Play">
 
