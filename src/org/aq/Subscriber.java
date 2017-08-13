@@ -18,14 +18,13 @@ public class Subscriber {
 	
 	    	
 	    		Class.forName("oracle.AQ.AQOracleDriver");
-	        Connection con = GetConnFromPool.returnConnectionFromPool();
-	        
-	        
-	        
+	        Connection con = GetConnFromPool.returnConnectionFromPool(); 
 	        TopicConnection tc_conn = AQjmsTopicConnectionFactory.createTopicConnection(con);
 	        TopicSession jms_sess = tc_conn.createTopicSession(true, Session.SESSION_TRANSACTED);
 	        tc_conn.start();
-	        Topic queueTopic = ((AQjmsSession) jms_sess).getTopic("gameserver","TEST_QUEUE");
+	       
+	        
+	        Topic queueTopic = ((AQjmsSession) jms_sess).getTopic("jmsuser","AQ_QUEUE5");
 	        TopicSubscriber subGreen =  (TopicSubscriber)((AQjmsSession) jms_sess).createDurableSubscriber(queueTopic, "GREEN");
 	       // TopicSubscriber subRed =  (TopicSubscriber)((AQjmsSession) jms_sess).createDurableSubscriber(queueTopic, "RED");        
 	        Message msg = subGreen.receive(10);
