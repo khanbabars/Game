@@ -10,7 +10,7 @@ import oracle.ucp.UniversalConnectionPoolException;
 
 public class AqTopicConn {
 	
-	public  TopicConnection tc_conn = null;
+	public  TopicConnection tc_conn;
 	public  Connection con;
 	private  State state = State.Initialize;
 	
@@ -48,7 +48,7 @@ public class AqTopicConn {
    	 return tc_conn;
    	 
 	}
-	public enum State { Unknown, Initialize, Active, Closed } 
+	public enum State { Status ,Unknown, Initialize, Active, Closed } 
 	 
 }
 

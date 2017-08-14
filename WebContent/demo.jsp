@@ -20,7 +20,7 @@ Game Area	<br>
 
 
 
-<% Publisher publisher = new Publisher(State.Initialize);%>
+<% Publisher publisher = new Publisher(State.Status);%>
 
 <% java.util.Date date  = new java.util.Date(); %>
 <div> <%= date %></div>
@@ -47,6 +47,7 @@ String balance = (request.getParameter("balance")==null)? "0" : request.getParam
 
  <%
 //  GameSession.getGameSession(Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));
+ 
  
  publisher.getGameSessionPublisher(Integer.parseInt(bet),Integer.parseInt(win),Integer.parseInt(balance));
  %> 

@@ -1,8 +1,6 @@
 package org.aq;
 
 
-
-
 import java.sql.SQLException;
 import javax.jms.*;
 import org.aq.AqTopicConn.State;
@@ -22,14 +20,27 @@ public class Publisher {
 		 
 		 switch (state) {
 		 
-		 case  Initialize : 
-			 aqTopicConn.tc_conn =  aqTopicConn.startConnection();
+		 case  Status : 
+
+				if (aqTopicConn.con == null){
+					 aqTopicConn.tc_conn =  aqTopicConn.startConnection();
+				}
+				else if (aqTopicConn.con != null){
+					 System.out.print("gsdb status is active");
+				}
+				return;
+				
+		  case  Initialize : 
+			  aqTopicConn.tc_conn =  aqTopicConn.startConnection();
 			  return;
 		  case  Active : 
-			  aqTopicConn.tc_conn =  aqTopicConn.startConnection();
+			  System.out.print("gsdb connection is active");
 			  return;
 		  case  Closed : 
 			  aqTopicConn.tc_conn =  aqTopicConn.closeConnection();
+			  return;
+		  case  Unknown : 
+			  System.err.print("GSDB connection is in unknown State");
 			  return;
 		default:
 			break;
@@ -80,7 +91,7 @@ public class Publisher {
        // publisherAq.publish(messOnlyForGreen, new AQjmsAgent[]{new AQjmsAgent("GREEN", null)} );
         System.out.println("Finished ");
    //     	con.commit();
-        aqTopicConn.con.commit();
+       aqTopicConn.con.commit();
 //        aqTopicConn.tc_conn.
 //        con.close();      
         } 
