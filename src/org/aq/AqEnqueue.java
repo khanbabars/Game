@@ -1,7 +1,7 @@
 package org.aq;
 
 import org.datasource.GetConnFromPool;
-	import java.sql.Connection;
+import java.sql.Connection;
 import javax.jms.*;
 import oracle.jms.AQjmsSession;
 import oracle.jms.AQjmsTopicConnectionFactory;

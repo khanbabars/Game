@@ -9,7 +9,8 @@ public class GetConnFromPool {
 	public static Connection returnConnectionFromPool() throws SQLException, UniversalConnectionPoolException {
 	
 	Connection conn = JdbcConnectionPool.poolFactoryPrimary().getConnection();
-	System.out.println("Assigning connection from the pool");
+	conn.setAutoCommit(true);
+	System.out.println("processing gsdb transcation");
 	return conn;
 		
 	}

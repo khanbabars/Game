@@ -18,7 +18,7 @@ import oracle.ucp.jdbc.PoolDataSource;
 */
 public class JdbcConnectionPool {
 	
-		public Connection conn;
+		public static Connection conn;
 		private static PoolDataSource poolDsFactory;
 		public static  PoolDataSource poolFactoryPrimary() throws SQLException, UniversalConnectionPoolException {
 		try {
@@ -44,11 +44,10 @@ public class JdbcConnectionPool {
 			poolDsFactory.setMinPoolSize(10);
 			poolDsFactory.setMaxPoolSize(100);
 			poolDsFactory.setMaxConnectionReuseCount(100);
-			poolDsFactory.setConnectionWaitTimeout(10);
-			poolDsFactory.setInactiveConnectionTimeout(10);
-			
+			poolDsFactory.setConnectionWaitTimeout(1000);
+			poolDsFactory.setInactiveConnectionTimeout(1000);
 			//Caching enable
-			poolDsFactory.setMaxStatements(50);
+			poolDsFactory.setMaxStatements(500);
 			return poolDsFactory;
 		
 
@@ -88,9 +87,9 @@ public class JdbcConnectionPool {
 	poolDsFactory.setMinPoolSize(10);
 	poolDsFactory.setMaxPoolSize(100);
 	poolDsFactory.setMaxConnectionReuseCount(100);
-	poolDsFactory.setConnectionWaitTimeout(10);
-	poolDsFactory.setInactiveConnectionTimeout(10);
-	System.out.println("Enabling Session factory");
+	poolDsFactory.setConnectionWaitTimeout(1000);
+	poolDsFactory.setInactiveConnectionTimeout(1000);
+	System.out.println("Get connection from pool");
 	//Caching enable
 	poolDsFactory.setMaxStatements(10);
 	return poolDsFactory;
