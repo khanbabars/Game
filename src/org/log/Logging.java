@@ -13,6 +13,7 @@ public class Logging {
 		   
 	     
 	      logger.info("Starting Application Server");
+		  logger.DEBUG("Appserver logging in debug mode")
 	      System.out.println("logs are printing");
 	      /*
 	      logger.debug("DEBUG");
